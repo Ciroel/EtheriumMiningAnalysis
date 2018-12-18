@@ -77,7 +77,7 @@ def estimate_profit(mining_instance, mining_location, etherium_params, in_dollar
 
 
 
-
+#
 # df_etherium_prices = pd.read_csv('data/ETH-USD.csv')
 # df_etherium_prices = df_etherium_prices[['Date', 'Adj Close']]
 # df_etherium_prices.rename(columns={'Adj Close': 'Price'}, inplace=True)
@@ -142,12 +142,23 @@ def estimate_profit(mining_instance, mining_location, etherium_params, in_dollar
 # # fig.tight_layout()
 # plt.savefig('pic/profit.png')
 #
-
-
-
-
-
-
+#
+# ######## Polina's graph
+#
+# plt.close()
+#
+# plt.figure(figsize=(30, 9))
+# dates = df_etherium_prices['Date'].values
+# prices = df_etherium_prices['Adj Close'].values
+#
+# dates = [date[:-3] for date in dates]
+#
+# plt.plot(prices)
+# plt.xticks(list(range(len(dates))), dates)
+# plt.ylabel('Etherium price, USD dollars')
+# plt.xlabel('Month')
+# plt.tight_layout()
+# plt.savefig('pic/etherium_price.png')
 
 # print(value_from_mining, cost_for_electricity, profit)
 
